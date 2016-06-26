@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Effective Hand Strength">
+    <meta name="author" content="Lucas Medeiros">
+
+    <title>Poker PostFlop - Effective Hand Strength</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-formhelpers.min.css" rel="stylesheet">    
+    <link rel="stylesheet" type="text/css" href="css/playingcards.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Poker Post-Flop <small>Effective Hand Strength</small></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Language<span class="caret"></span></a>
+              <ul class="dropdown-menu localization">
+                <li><a href="#"><span class="bfh-languages" data-language="en_US" data-flags="true"></span></a></li>
+                <li><a href="#"><span class="bfh-languages" data-language="pt_BR" data-flags="true"></span></a></li>
+              </ul>
+            </li>            
+            <li><a href="help.html">Help</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+    
+        <div class="page-header">
+            <h3 data-localization="algorithm"></h3>
+        </div>
+        <div class="page-content">
+            <p data-localization="ehs-definition"></p>
+
+            <div class="list-group">
+              <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">EHS</h4>
+                <p class="list-group-item-text" data-localization="ehs"></p>
+              </a>
+              <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">HS</h4>
+                <p class="list-group-item-text" data-localization="hs"></p>
+              </a>
+              <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">NPOT</h4>
+                <p class="list-group-item-text" data-localization="npot"></p>
+              </a>
+              <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">PPOT</h4>
+                <p class="list-group-item-text" data-localization="ppot"></p>
+              </a>
+              <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Pr(win)</h4>
+                <p class="list-group-item-text" data-localization="prwin"></p>
+              </a>
+            </div>
+
+            <p>
+                <span data-localization="prwin-definition"></span> 
+                <code>Pr(Win) = HSˆn × (1 − NPot) + (1 − HSˆn) × PPot</code> 
+                <span data-localization="n-definition"></span>
+                <span data-localization="ehs-equals-hs"></span>
+            </p>
+            <p>
+                <span data-localization="betting-ehs"></span>
+                <code>EHS = HSˆn + (1 − HSˆn) × PPot</code>.
+            </p>
+        </div>
+
+        <div class="page-header">
+            <h4 data-localization="opponent-range"></h4>
+        </div>
+        <div class="page-content">
+            <p data-localization="opponent-range-definition"></p>
+            <p>
+                <span data-localization="example"></span>
+                <code>77</code> 
+                <span data-localization="range-sevens"></span>
+            </p>
+            <div class="range-indicator auto" data-evaluate="77"></div>
+            <p><code>AdJd+</code> <span data-localization="range-aj"></span> J&diams;.</p>
+            <div class="range-indicator auto" data-evaluate="AdJd+"></div>
+            <p><code>Tx9x</code> <span data-localization="range-t9s"></span></p>
+            <div class="range-indicator auto" data-evaluate="Tx9x"></div>
+            <p><code>T9</code> <span data-localization="range-t9"></span></p>
+            <div class="range-indicator auto" data-evaluate="T9"></div>
+        </div>
+
+        <div class="page-header">
+            <h4 data-localization="complexity"></h4>
+        </div>
+        <div class="page-content">
+            <p data-localization="ehs-calculation"></p>
+            <p data-localization="ehs-combinations"></p>
+            <p data-localization="cost-calculation"></p>
+            <p>
+                <span data-localization="tight-range"></span>
+                <code>KK</code>, <code>AA</code> <span data-localization="or"></span> <code>AxKx</code>. 
+                <span data-localization="tight-combination"></span>
+            </p>
+        </div>
+
+        <div class="page-header">
+            <h4 data-localization="analyzing"></h4>
+        </div>
+        <div class="page-content">
+            <p data-localization="analysing-info"></p>
+
+            <div class="bs-callout"> 
+                <h4>EHS</h5>
+                <p data-localization="ehs-info"></p>
+                <p data-localization="ehs-tier1"></p>
+                <p data-localization="ehs-tier2"></p>
+            </div>
+
+            <div class="bs-callout"> 
+                <h4>PPOT</h4>
+                <p data-localization="ppot-definition"></p>
+                <p data-localization="ppot-tier1"></p>
+                <p data-localization="ppot-tier2"></p>
+                <p data-localization="semi-bluff"></p>
+                <p data-localization="checkraise"></p>
+                <p>
+                    <code data-localization="potodds"></code>
+                </p>
+                <p data-localization="potodds-definition"></p>
+            </div>
+            <p data-localization="reevaluate"></p>
+            <a data-localization="back" href="/"></a>
+        </div>
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/bootstrap-formhelpers.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+
+    <script src="js/localization.js"></script>
+
+    <script src="js/deckbuilder.js"></script>
+
+    <script src="js/help.js"></script>
+
+    <script id="card-back" type="text/x-mustache-template">
+      <div class="card-back"><span class="middle_center"><img src="img/card-back.png"/></span></div>
+    </script>
+    <script id="card-2" type="text/x-mustache-template">
+      <div class="card-two {{suit.name}}">
+        <div class="corner top"><span class="number">2</span><span>{{{suit.symbol}}}</span></div><span class="suit top_center">{{{suit.symbol}}}</span><span class="suit bottom_center">{{{suit.symbol}}}</span>
+        <div class="corner bottom"><span class="number">2</span><span>{{{suit.symbol}}}</span></div>
+      </div>
+    </script>
+    <script id="card-3" type="text/x-mustache-template">
+      <div class="card-three {{suit.name}}">
+        <div class="corner top"><span class="number">3</span><span>{{{suit.symbol}}}</span></div><span class="suit top_center">{{{suit.symbol}}}</span><span class="suit middle_center">{{{suit.symbol}}}</span><span class="suit bottom_center">{{{suit.symbol}}}</span>
+        <div class="corner bottom"><span class="number">3</span><span>{{{suit.symbol}}}</span></div>
+      </div>
+    </script>
+    <script id="card-4" type="text/x-mustache-template">
+      <div class="card-four {{suit.name}}">
+        <div class="corner top"><span class="number">4</span><span>{{{suit.symbol}}}</span></div><span class="suit top_left">{{{suit.symbol}}}</span><span class="suit top_right">{{{suit.symbol}}}</span><span class="suit bottom_left">{{{suit.symbol}}}</span><span class="suit bottom_right">{{{suit.symbol}}}</span>
+        <div class="corner bottom"><span class="number">4</span><span>{{{suit.symbol}}}</span></div>
+      </div>
+    </script>
+    <script id="card-5" type="text/x-mustache-template">
+      <div class="card-five {{suit.name}}">
+        <div class="corner top"><span class="number">5</span><span>{{{suit.symbol}}}</span></div><span class="suit top_left">{{{suit.symbol}}}</span><span class="suit top_right">{{{suit.symbol}}}</span><span class="suit middle_center">{{{suit.symbol}}}</span><span class="suit bottom_left">{{{suit.symbol}}}</span><span class="suit bottom_right">{{{suit.symbol}}}</span>
+        <div class="corner bottom"><span class="number">5</span><span>{{{suit.symbol}}}</span></div>
+      </div>
+    </script>
+    <script id="card-6" type="text/x-mustache-template">
+      <div class="card-six {{suit.name}}">
+        <div class="corner top"><span class="number">6</span><span>{{{suit.symbol}}}</span></div><span class="suit top_left">{{{suit.symbol}}}</span><span class="suit top_right">{{{suit.symbol}}}</span><span class="suit middle_left">{{{suit.symbol}}}</span><span class="suit middle_right">{{{suit.symbol}}}</span><span class="suit bottom_left">{{{suit.symbol}}}</span><span class="suit bottom_right">{{{suit.symbol}}}</span>
+        <div class="corner bottom"><span class="number">6</span><span>{{{suit.symbol}}}</span></div>
+      </div>
+    </script>
+    <script id="card-7" type="text/x-mustache-template">
+      <div class="card-seven {{suit.name}}">
+        <div class="corner top"><span class="number">7</span><span>{{{suit.symbol}}}</span></div><span class="suit top_left">{{{suit.symbol}}}</span><span class="suit top_right">{{{suit.symbol}}}</span><span class="suit middle_left">{{{suit.symbol}}}</span><span class="suit middle_top">{{{suit.symbol}}}</span><span class="suit middle_right">{{{suit.symbol}}}</span><span class="suit bottom_left">{{{suit.symbol}}}</span><span class="suit bottom_right">{{{suit.symbol}}}</span>
+        <div class="corner bottom"><span class="number">7</span><span>{{{suit.symbol}}}</span></div>
+      </div>
+    </script>
+    <script id="card-8" type="text/x-mustache-template">
+      <div class="card-eight {{suit.name}}">
+        <div class="corner top"><span class="number">8</span><span>{{{suit.symbol}}}</span></div><span class="suit top_left">{{{suit.symbol}}}</span><span class="suit top_right">{{{suit.symbol}}}</span><span class="suit middle_left">{{{suit.symbol}}}</span><span class="suit middle_top">{{{suit.symbol}}}</span><span class="suit middle_right">{{{suit.symbol}}}</span><span class="suit middle_bottom">{{{suit.symbol}}}</span><span class="suit bottom_left">{{{suit.symbol}}}</span><span class="suit bottom_right">{{{suit.symbol}}}</span>
+        <div class="corner bottom"><span class="number">8</span><span>{{{suit.symbol}}}</span></div>
+      </div>
+    </script>
+    <script id="card-9" type="text/x-mustache-template">
+      <div class="card-nine {{suit.name}}">
+        <div class="corner top"><span class="number">9</span><span>{{{suit.symbol}}}</span></div><span class="suit top_left">{{{suit.symbol}}}</span><span class="suit top_right">{{{suit.symbol}}}</span><span class="suit middle_top_left">{{{suit.symbol}}}</span><span class="suit middle_center">{{{suit.symbol}}}</span><span class="suit middle_top_right">{{{suit.symbol}}}</span><span class="suit bottom_left">{{{suit.symbol}}}</span><span class="suit bottom_right">{{{suit.symbol}}}</span><span class="suit middle_bottom_left">{{{suit.symbol}}}</span><span class="suit middle_bottom_right">{{{suit.symbol}}}</span>
+        <div class="corner bottom"><span class="number">9</span><span>{{{suit.symbol}}}</span></div>
+      </div>
+    </script>
+    <script id="card-T" type="text/x-mustache-template">
+      <div class="card-ten {{suit.name}}">
+        <div class="corner top"><span class="number">10</span><span>{{{suit.symbol}}}</span></div><span class="suit top_left">{{{suit.symbol}}}</span><span class="suit top_right">{{{suit.symbol}}}</span><span class="suit middle_top_left">{{{suit.symbol}}}</span><span class="suit middle_top_center">{{{suit.symbol}}}</span><span class="suit middle_top_right">{{{suit.symbol}}}</span><span class="suit bottom_left">{{{suit.symbol}}}</span><span class="suit bottom_right">{{{suit.symbol}}}</span><span class="suit middle_bottom_center">{{{suit.symbol}}}</span><span class="suit middle_bottom_left">{{{suit.symbol}}}</span><span class="suit middle_bottom_right">{{{suit.symbol}}}</span>
+        <div class="corner bottom"><span class="number">10</span><span>{{{suit.symbol}}}</span></div>
+      </div>
+    </script>
+    <script id="card-J" type="text/x-mustache-template">
+      <div class="card-jack {{suit.name}}">
+        <div class="corner top"><span class="number">J</span><span>{{{suit.symbol}}}</span></div><span class="face middle_center"><img src="img/faces/face-jack-{{suit.name}}.png"/></span>
+        <div class="corner bottom"><span class="number">J</span><span>{{{suit.symbol}}}</span></div>
+      </div>
+    </script>
+    <script id="card-Q" type="text/x-mustache-template">
+      <div class="card-queen {{suit.name}}">
+        <div class="corner top"><span class="number">Q</span><span>{{{suit.symbol}}}</span></div><span class="face middle_center"><img src="img/faces/face-queen-{{suit.name}}.png"/></span>
+        <div class="corner bottom"><span class="number">Q</span><span>{{{suit.symbol}}}</span></div>
+      </div>
+    </script>
+    <script id="card-K" type="text/x-mustache-template">
+      <div class="card-king {{suit.name}}">
+        <div class="corner top"><span class="number">K</span><span>{{{suit.symbol}}}</span></div><span class="face middle_center"><img src="img/faces/face-king-{{suit.name}}.png"/></span>
+        <div class="corner bottom"><span class="number">K</span><span>{{{suit.symbol}}}</span></div>
+      </div>
+    </script>
+    <script id="card-A" type="text/x-mustache-template">
+      <div class="card-ace {{suit.name}}">
+        <div class="corner top"><span class="number">A</span><span>{{{suit.symbol}}}</span></div><span class="suit middle_center">{{{suit.symbol}}}</span>
+        <div class="corner bottom"><span class="number">A</span><span>{{{suit.symbol}}}</span></div>
+      </div>
+    </script>
+
+</body>
+
+</html>
