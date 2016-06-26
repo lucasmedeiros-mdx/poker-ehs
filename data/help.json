@@ -1,0 +1,160 @@
+{
+    "locales": {
+    	"ehs-definition": {
+    		"en-US": "Poker Effective Hand Strength (EHS) is an algorithm to quantify the strength of a poker hand, its result expresses the strength of a particular hand in percentile compared to all other possible hands considering the opponent range.",
+    		"pt-BR": "Poker: Força Efetiva da Mão (EHS) é um algoritmo para quantificar a força de uma mão de poker, seu resultado expressa a força de uma mão em particular comparada com todas as mãos possíves no alcance de seu oponente."
+    	},
+    	"algorithm": {
+    		"en-US": "Algorithm",
+    		"pt-BR": "Algoritmo"
+    	},
+    	"ehs": {
+    		"en-US": "Effective Hand Strength",
+    		"pt-BR": "Força Efetiva da Mão"
+    	},
+    	"hs": {
+    		"en-US": "Current Hand Strength",
+    		"pt-BR": "Força da Mão Atual"    		
+    	},
+    	"npot": {
+    		"en-US": "Negative Potential (the probability that our current hand, if the strongest, deteriorates and becomes a losing hand).",
+    		"pt-BR": "Potencial Negativo (probabilidade de que a nossa mão atual, quando mais forte, piore e torne-se uma mão perdedora)."
+    	},
+    	"ppot": {
+    		"en-US": "Positive Potential (the probability that our current hand, if losing, improves and becomes a winning hand).",
+    		"pt-BR": "Potencial Positivo (probabilidade de que a nossa mão atual, quando perdendo, melhore e torne-se uma mão vencedora)."
+    	},
+    	"prwin": {
+    		"en-US": "Probability of winning at the showdown",
+    		"pt-BR": "Probabilidade de ganhar no showdown (revelação de cartas)"
+    	},
+    	"prwin-definition": {
+    		"en-US": "The probability of winning is determined by",
+    		"pt-BR": "A probabilidade de ganhar é determinada por"
+    	},
+    	"n-definition": {
+    		"en-US": "where <i>\"n\"</i> is the number of opponents remaining in the hand.",
+    		"pt-BR": "onde <i>\"n\"</i> é o número de oponentes remanescentes na mão."
+    	},
+    	"ehs-equals-hs": {
+    		"en-US": "Observe that on the river <i>EHS = HSn</i>, since there are no more cards to be dealt.",
+    		"pt-BR": "Observe que no River <i>EHS = HSn</i>, já que não existem mais cartas a serem distribuídas."
+    	},
+    	"betting-ehs": {
+    		"en-US": "However, for betting purposes, we often don't want to include the Negative Potential of our hand. In many situations where we compute a high NPOT, is a better strategy to bet/raise to force the opponent out of the hand. So when effective hand strength is used as a betting decision (as opposed to a calling decision) it is preferable to use a more optimistic version",
+    		"pt-BR": "Entretanto, para propósitos de aposta, geralmente não queremos incluir o Potencial Negativo de nossa mão. Em muitas situações onde encontramos um NPOT alto, é uma estratégia melhor apostar ou aumentar para forçar seu oponente fora da mão. Portanto quando a força efetiva da mão é utilizada como uma decisão de aposta (em oposição a uma decisão para pagar) é preferível utilizar uma versão mais otimista"
+    	},
+    	"opponent-range-definition": {
+    		"en-US": "The expected input is a string containing one of the <code>23456789TJQKA</code> possible cards followed by <code>CDHS</code> representing the suit, this input will evaluate the possible combinations in the range.",
+    		"pt-BR": "A entrada esperada é um texto contendo uma das cartas possíveis <code>23456789TJQKA</code> seguido por <code>CDHS</code> representando o naipe (C = Paus, D = Ouros, H = Copas, S = Espadas), essa entrada irá avaliar as combinações possíveis no intervalo."
+    	},
+    	"opponent-range": {
+    		"en-US": "Opponent Range",
+    		"pt-BR": "Alcance do Oponente"
+    	},
+    	"example": {
+    		"en-US": "For instance, ",
+    		"pt-BR": "Por exemplo, "
+    	},
+    	"or": {
+    		"en-US": "or",
+    		"pt-BR": "ou"
+    	},
+    	"range-sevens": {
+    		"en-US": "should evaluate all possible pairs of <i>Sevens</i>.",
+    		"pt-BR": "deve processar todos os possíveis pares de <i>Sete</i>."
+    	},
+    	"range-aj": {
+    		"en-US": "evaluates a range of cards higher than",
+    		"pt-BR": "processa um intervalo de cartas maior que"	
+    	},
+    	"range-t9s": {
+    		"en-US": "evaluates all suited combinations of Tens and Nines.",
+    		"pt-BR": "processa todas as combinações de mesmo naipe de Dez e Noves."
+    	},
+    	"range-t9": {
+    		"en-US": "evaluates all non-suited combinations of Tens and Nines.",
+    		"pt-BR": "processa todas as combinações de naipes diferentes de Dez e Noves."
+    	},
+    	"complexity": {
+    		"en-US": "Complexity",
+    		"pt-BR": "Complexidade"
+    	},
+    	"ehs-calculation": {
+    		"en-US": "The Effective Hand Strength is a complex calculation. Consider a normal deck with 52 cards and remove the 3 cards from the flop, you need to compare your 2 cards with every possible 2 cards remaining from your opponent model, for each possible turn and river card.",
+    		"pt-BR": "A Força Efetiva da Mão é uma cálculo complexo. Considere um baralho normal com 52 cartas e remova as 3 cartas do flop, você precisa comparar as suas 2 cartas com todas as possíveis 2 cartas restantes do seu modelo de oponente, para cada turn e river possível."
+    	},
+    	"ehs-combinations": {
+    		"en-US": "Considering any two opponent cards would exist <code>C(47,2) x C(45,2)</code> possible combinations, this means the algorithm has to evaluate 1070190 hands.",
+    		"pt-BR": "Considerando quaiquer duas cartas para seu oponente existiriam <code>C(47,2) x C(45,2)</code> combinações possíveis, isto significa que o algoritmo precisa avaliar 1070190 mãos."
+    	},
+    	"cost-calculation": {
+    		"en-US": "This is a high cost calculation and should take a few seconds, the <i>\"Fast\"</i> option solves this problem by considering only the next board card, giving an approximate value of the EHS. As you restrict your opponent range, the number of possible combinations reduce dramatically, and the <i>\"Complete\"</i> option shouldn't take more than a few milliseconds.",
+    		"pt-BR": "Este é um cálculo de custo alto e deve levar alguns segundos, o modo <i>\"Rápido\"</i> resolve este problema considerando apenas a próxima carta na mesa, dando um valor aproximado do EHS. Conforme você restringe o alcance do seu oponente, o número possível de combinações reduz drasticamente, e o modo <i>\"Completo\"</i> não deve levar mais de poucos milissegundos."
+    	},
+    	"tight-range": {
+    		"en-US": "Let's say a tight opponent 4bet you and you put him in a range of ",
+    		"pt-BR": "Digamos que um oponente <i>tight</i> aplique um <i>4bet</i> e você o coloque num intervalo de "
+    	},
+    	"tight-combination": {
+    		"en-US": "This represents your opponent model of 16 possible hands combinations. The algorithm would evalute <code>16 * C(45, 2) = 15840</code> hands, which is considerably less than the previous evaluation.",
+    		"pt-BR": "Isto representa seu modelo de oponente com 16 possíveis combinações de mãos. O algoritmo iria avaliar <code>16 * C(45, 2) = 15840</code> mãos, o que é consideravelmente menos que a análise anterior."
+    	},
+    	"analyzing": {
+    		"en-US": "Analyzing your Hand",
+    		"pt-BR": "Analisando sua Mão"
+    	},
+    	"analyzing-info": {
+    		"en-US": "Calculating the EHS of your hand gives you detailed values, but it's important to know how to use those statistics.",
+    		"pt-BR": "Calculando o EHS de sua mão lhe disponibiliza valores detalhados, mas é importante saber como utilizar essas estatísticas."
+    	},
+        "ehs-info": {
+            "en-US": "A higher EHS means you have a higher change of winning with your hand, simple as that.",
+            "pt-BR": "Um EHS alto significa que você possui uma chance maior de ganhar com sua mão, simples assim."
+        },
+        "ehs-tier1": {
+            "en-US": "A <span class=\"tier1\">Tier 1</span> EHS usually represents a stronger hand and you should probably be value betting or raising your opponent.",
+            "pt-BR": "Um EHS <span class=\"tier1\">Categoria 1</span> geralmente representa uma mão mais forte e você provavelmente deveria estar apostando por valor ou aumentado a aposta de seu oponente."
+        },
+        "ehs-tier2": {
+            "en-US": "A <span class=\"tier2\">Tier 2</span> EHS represents a decent hand but you could be beaten, this means your hand is not strong enough to bet with, you should call or proceed with caution.",
+            "pt-BR": "Um EHS <span class=\"tier2\">Categoria 2</span> representa uma mão decente mas você pode estar batido, isto significa que sua mão não é forte o suficiente para apostar, você deve pagar ou prosseguir com cuidado."
+        },
+        "ppot-definition": {
+            "en-US": "To balance your strong hands it's important to also bet with Semi-bluffs and Draws. The Positive Potential of your hand helps you to determine when it's profitable or not to bet as a bluff.",
+            "pt-BR": "Para balancear suas mãos fortes é importante apostar também com <i>semi-bluffs</i> e <i>draws</i>. O potencial positivo de sua mão ajuda a determinar quando é rentável ou não apostar como blefe."
+        },
+        "ppot-tier1": {
+            "en-US": "A <span class=\"tier1\">Tier 1</span> PPOT gives your hand good chances of becoming the best hand in the following turn or river. These are hands like nut flush draws or not obvious open-ended straight draws.",
+            "pt-BR": "Um PPOT <span class=\"tier1\">Categoria 1</span> garante a sua mão boas chances de tornar-se a melhor mão no <i>turn</i> ou <i>river</i>. Essas são mãos como <i>nut flush draws</i> ou não óbvios <i>open-ended straight draws</i>."
+        },
+        "ppot-tier2": {
+            "en-US": "A <span class=\"tier2\">Tier 2</span> PPOT means your hand could become the best hand, it's still profitable to bet with these hands against certain opponents (you should always bet those hands against opponents with high fold to continuation bet rate). It could either be a gutshot straight draw, combinations of two overcards with backdoor flush draws and such.",
+            "pt-BR": "Um PPOT <span class=\"tier2\">Categoria 2</span> significa que sua mão pode tornar-se a melhor mão, ainda é rentável apostar com essas mãos contra certos oponentes (deve sempre apostar com essas mãos contra oponentes com alta taxa de desistência para apostas de continuação). Podem representar um <i>gutshot straight draw</i>, combinações de duas cartas mais altas com <i>backdoor flush draws</i>, entre outros."
+        },
+        "semi-bluff": {
+            "en-US": "When betting as a semi-bluff there are other factors you should take into consideration, \"How big is your opponent stack\" and \"What Pot Odds are you giving him to call you\"? If none of the other players bet or raise we should continue to bet in subsequent rounds even without sufficient potential (continuing to represent a strong hand while there is a reasonable chance of winning the pot immediately when they fold).",
+            "pt-BR": "Ao apostar como um semi-bluff, existem outros fatores que você deve considerar, \"Quão grande é a stack de seu oponente\" e \"Quais Pot Odds você está dando a ele para pagar\"? Se nenhum dos outros jogadores apostar ou aumentar nós devemos continuar a apostar nas rodadas subsequentes, mesmo sem potencial suficiente (continuando a representar uma mão forte, enquanto há uma chance razoável de ganhar o pote imediatamente quando eles fugirem)."      
+        },
+        "checkraise": {
+            "en-US": "If you <i>check-raise</i> every hand where you have some potential it becomes very obvious for experienced players. So you should apply frequency-based decisions, you should be able to decide between Check-Raising, Calling or Folding.",
+            "pt-BR": "Se você efetuar um <i>check-raise</i> em todas as mãos onde você possui algum potencial isto torna-se óbvio para jogadores experientes. Portanto você deve considerar a frequência em suas decisões, sendo capaz de decidir entre <i>check-raise<i>, Pagar ou Desistir."
+        },
+        "potodds": {
+            "en-US": "Pot Odds = Amount to Call / (Pot Size + Amount to Call)",
+            "pt-BR": "Pot Odds = Valor a Pagar / (Tamanho do Pote + Valor a Pagar)"
+        },
+        "potodds-definition": {
+            "en-US": "If your opponent bet on the flop or turn you should evaluate your Pot Odds before taking your decision. If your Positive Potential is higher than your Pot Odds that's a profitable call.",
+            "pt-BR": "Se seu oponente apostar no flop ou turn você deve avaliar seus <i>Pot Odds</i> antes de tomar sua decisão. Se seu Potencial Positivo é maior que seus <i>Pot Odds</i>, é lucrativo pagar essa aposta."
+        },
+        "reevaluate": {
+            "en-US": "You should reevaluate your situation every step of the way. Just as the strength of a hand is different on the <i>flop, turn, river</i> and <i>pre-flop</i>, so should be your strategy.",
+            "pt-BR": "Você deve reavaliar sua situação a cada passo do caminho. Assim como a força de uma mão é diferente no <i>flop, turn, river</i> e <i>pré-flop</i>, assim deve ser a sua estratégia."
+        },
+        "back": {
+            "en-US": "Back to main page",
+            "pt-BR": "Voltar à página principal"
+        }
+    }
+}

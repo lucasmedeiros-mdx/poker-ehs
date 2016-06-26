@@ -1,0 +1,56 @@
+{
+    "locales": {
+        "hand": {
+            "en-US": "Hand",
+            "pt-BR": "Mão"
+        },
+        "board": {
+            "en-US": "Board",
+            "pt-BR": "Mesa"
+        },
+        "range": {
+            "en-US": "Opponent Range",
+            "pt-BR": "Alcance do Oponente"
+        },
+        "check": {
+            "en-US": "Check the",
+            "pt-BR": "Verifique a"
+        },
+        "help-section": {
+            "en-US": "Help section",
+            "pt-BR": "Seção de ajuda"
+        },
+        "help-info": {
+            "en-US": "to understand the algorithm concepts and how to use the EHS in your betting strategy.",
+            "pt-BR": "para entender os conceitos do algoritmo e como utilizar o EHS em sua estratégia de aposta."
+        },
+        "position-range": {
+            "en-US": "Positional Range",
+            "pt-BR": "Alcance por Posição"
+        },
+        "fast": {
+            "en-US": "Fast",
+            "pt-BR": "Rápido"
+        },
+        "complete": {
+            "en-US": "Complete",
+            "pt-BR": "Completo"
+        },
+        "opponents": {
+            "en-US": "N. Opponents",
+            "pt-BR": "N. Oponentes"
+        },
+        "results": {
+            "en-US": "Results",
+            "pt-BR": "Resultados"
+        },
+        "history": {
+            "en-US": "History",
+            "pt-BR": "Histórico"
+        },
+        "calculate": {
+            "en-US": "Calculate EHS",
+            "pt-BR": "Calcular EHS"
+        }
+    }
+}
