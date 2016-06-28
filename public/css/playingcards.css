@@ -452,7 +452,7 @@
 ul#history {
     max-height: 12em;
     cursor: pointer;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .auto {
     overflow: auto;
